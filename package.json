@@ -6,10 +6,10 @@
   "scripts": {
     "lint": "eslint src",
     "lint:fix": "npm run lint -- --fix",
-    "build": "webpack --mode development",
+    "test": "jest",
+    "build": "npm run test && webpack --mode development",
     "serve": "webpack serve --mode development",
-    "start": "npm run build && npm run serve",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run build && npm run serve"
   },
   "author": "Josh Serpas",
   "license": "ISC",
