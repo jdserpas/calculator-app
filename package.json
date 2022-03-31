@@ -4,6 +4,8 @@
   "description": "An app created for my Software Testing Lecture",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint src",
+    "lint:fix": "npm run lint -- --fix",
     "build": "webpack --mode development",
     "serve": "webpack serve --mode development",
     "start": "npm run build && npm run serve",
