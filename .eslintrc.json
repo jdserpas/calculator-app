@@ -17,6 +17,7 @@
     "plugins": [
         "react"
     ],
+    "ignorePatterns": ["webpack.config.js", "/dist/*"],
     "rules": {
         "indent": [
             "error",
