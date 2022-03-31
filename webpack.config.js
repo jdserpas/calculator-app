@@ -1,3 +1,4 @@
+/* eslint-disable */
 const path = require("path");
 const webpack = require("webpack");
 
@@ -25,10 +26,10 @@ module.exports = {
     filename: "bundle.js"
   },
   devServer: {
-      static: {
-          directory: path.join(__dirname, 'public'),
-      },
-      compress: true,
-      port: 3000,
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
+    compress: true,
+    port: 3000,
   }
 };
