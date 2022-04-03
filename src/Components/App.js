@@ -1,5 +1,5 @@
 import React, { Component} from "react";
-import "./App.css";
+import NumberInput from "./NumberInput";
 
 class App extends Component {
   constructor(props) {
@@ -12,14 +12,10 @@ class App extends Component {
 
   render() {
     return(
-      <div className="App">
+      <div className="App" data-testid="app-containter">
         <h1>Hello, World!</h1>
-        <input type="number" 
-          value={this.state.inputOne} 
-          data-testid="input-one" />
-        <input type="number" 
-          value={this.state.inputTwo} 
-          data-testid="input-two" />
+        <NumberInput />
+        <NumberInput />
       </div>
     );
   }
