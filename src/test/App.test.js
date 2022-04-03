@@ -28,7 +28,7 @@ describe("App Component", ()=> {
   test("text boxes values change", ()=> {
     const {getByTestId} = render(<App />);
     const component = getByTestId("input-one");
-    const newVal = "3"
+    const newVal = "3";
 
     fireEvent.change(component, {
       target: {
