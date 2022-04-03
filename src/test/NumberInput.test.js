@@ -24,4 +24,16 @@ describe("NumberInput Component", () => {
 
     expect(component).toHaveValue(3);
   });
+  it("only accepts number inputes", ()=> {
+    const {getByTestId} = render(<NumberInput />);
+    const component = getByTestId("input-field");
+
+    fireEvent.change(component, {
+      target: {
+        value: "3"
+      }
+    });
+
+    expect(component).toHaveValue(0);
+  });
 });
