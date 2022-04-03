@@ -5,9 +5,9 @@ import Total from "../Total";
 
 describe("Total component rendering", ()=> {
   it("displays given props", () => {
-    const inputVal = "dummy";
+    const inputVal = 3;
     const { getByTestId } = render(<Total total={inputVal}/>);
     const component = getByTestId("total");
-    expect(component.textContent).toEqual(inputVal);
+    expect(parseInt(component.textContent)).toBe(inputVal);
   });
 });
