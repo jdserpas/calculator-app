@@ -8,4 +8,8 @@ describe("NumberInput Component", () => {
     const {getByTestId} = render(<NumberInput />);
     expect(getByTestId("input-field")).toBeInTheDocument();
   });
+  it("has an initial value of 0", ()=> {
+    const {getByTestId} = render(<NumberInput />);
+    expect(getByTestId("input-field")).toHaveValue(0);
+  });
 });
