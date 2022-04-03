@@ -9,11 +9,16 @@ const NumberInput = () => {
         data-testid="input-field" 
         value={val}
         onChange={e => {
-          setState(e.target.value);
+          setState(validateNumber(e.target.value));
         }}
       />
     </div>
   );
+};
+
+const validateNumber = num => {
+  const res = parseInt(num);
+  return (isNaN(res)) ? 0 : res;
 };
 
 export default NumberInput;
