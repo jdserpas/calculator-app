@@ -10,11 +10,11 @@ describe("App Component", ()=> {
   });
 
   it("renders 2 textboxes", ()=> {
-      const {getByTestId} = render(<App />);
-      //const boxOne = getByTestId("input-one");
-      //const boxTwo = getByTestId("input-two");
+    const {getByTestId} = render(<App />);
+    //const boxOne = getByTestId("input-one");
+    //const boxTwo = getByTestId("input-two");
 
-      expect(getByTestId("input-one")).toBeInTheDocument();
-      expect(getByTestId("input-two")).toBeInTheDocument();
+    expect(getByTestId("input-one")).toBeInTheDocument();
+    expect(getByTestId("input-two")).toBeInTheDocument();
   });
 });

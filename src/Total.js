@@ -1,9 +1,16 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-export default function Total(props) {
+const Total = ({total}) => {
   return(
     <>
-      <h6 data-testid="total" >{props.total}</h6>
+      <h6 data-testid="total" >{total}</h6>
     </>
   );
-}
+};
+
+Total.propTypes = {
+  total: PropTypes.number
+};
+
+export default Total;
