@@ -3,7 +3,7 @@ import { render, screen} from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import Selector from "../Components/Selector";
 
-describe("Selector compnent", ()=> {
+describe("Selector component", ()=> {
   beforeEach(()=> {
     render(<Selector />);
   });
