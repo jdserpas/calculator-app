@@ -5,7 +5,13 @@ const NumberInput = () => {
 
   return(
     <div>
-      <input type="number"  data-testid="input-field" value={val}/>
+      <input type="number"  
+        data-testid="input-field" 
+        value={val}
+        onChange={e => {
+          setState(e.target.value);
+        }}
+      />
     </div>
   );
 };
