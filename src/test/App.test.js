@@ -17,4 +17,11 @@ describe("App Component", ()=> {
     expect(getByTestId("input-one")).toBeInTheDocument();
     expect(getByTestId("input-two")).toBeInTheDocument();
   });
+
+  test("two text boxes in component default to 0", ()=> {
+    const {getByTestId} = render(<App />);
+
+    expect(getByTestId("input-one")).toHaveValue(0);
+    expect(getByTestId("input-two")).toHaveValue(0);
+  });
 });
