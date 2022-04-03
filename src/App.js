@@ -6,6 +6,8 @@ class App extends Component {
     return(
       <div className="App">
         <h1>Hello, World!</h1>
+        <input type="number" value="0" data-testid="input-one" />
+        <input type="number" value="0" data-testid="input-two" />
       </div>
     );
   }
