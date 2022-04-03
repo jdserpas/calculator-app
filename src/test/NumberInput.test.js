@@ -30,7 +30,7 @@ describe("NumberInput Component", () => {
 
     fireEvent.change(component, {
       target: {
-        value: "3"
+        value: "ayoo"
       }
     });
 
