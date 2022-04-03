@@ -11,14 +11,19 @@ class App extends Component {
   }
 
   render() {
+    const {inputOne, inputTwo} = this.state;
+
     return(
       <div className="App">
         <h1>Hello, World!</h1>
         <input type="number" 
-          value={this.state.inputOne} 
+          value={inputOne}
+          onChange={e => {
+            this.setState({inputOne: e.target.value});
+          }}
           data-testid="input-one" />
         <input type="number" 
-          value={this.state.inputTwo} 
+          value={inputTwo} 
           data-testid="input-two" />
       </div>
     );
