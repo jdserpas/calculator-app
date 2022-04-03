@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import Total from "../Total";
+import Total from "../Components/Total";
 
 describe("Total component rendering", ()=> {
   it("displays given props", () => {
