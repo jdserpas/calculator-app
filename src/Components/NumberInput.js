@@ -2,7 +2,9 @@ import React from "react";
 
 const NumberInput = () => {
   return(
-    <div></div>
+    <div>
+      <input type="number"  data-testid="input-field" />
+    </div>
   );
 };
 
