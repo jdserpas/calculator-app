@@ -1,5 +1,6 @@
 import React, { Component} from "react";
 import NumberInput from "./NumberInput";
+import Selector from "./Selector";
 
 class App extends Component {
   constructor(props) {
@@ -16,6 +17,7 @@ class App extends Component {
         <h1>Hello, World!</h1>
         <NumberInput />
         <NumberInput />
+        <Selector />
       </div>
     );
   }
