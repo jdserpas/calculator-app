@@ -13,7 +13,7 @@ describe("Selector component", ()=> {
     expect(component).toBeInTheDocument();
   });
   it("has an addition option", ()=> {
-    const addOption = screen.getByDisplayValue("+");
-    expect(addOption).toBeInTheDocument();
+    const addOption = screen.getByTestId("drop-down");
+    expect(addOption).toHaveValue("+");
   });
 });
