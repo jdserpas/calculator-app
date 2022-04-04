@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const Total = ({total}) => {
   return(
     <>
-      <h6 data-testid="total" >{total}</h6>
+      <h2 data-testid="total" >{total}</h2>
     </>
   );
 };
