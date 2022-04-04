@@ -12,7 +12,7 @@ describe("Selector component", ()=> {
     const component = screen.getByTestId("drop-down");
     expect(component).toBeInTheDocument();
   });
-  it("has an addition and subtraction option", ()=> {
+  it("has an addition option", ()=> {
     const component = screen.getByTestId("drop-down");
     expect(component).toHaveValue("plus");
   });
