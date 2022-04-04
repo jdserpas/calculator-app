@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
-const NumberInput = () => {
-  const [val, setState] = useState(0);
+const NumberInput = ({name, initialVal}) => {
+  const [val, setState] = useState(initialVal);
 
   return(
     <div>
       <input type="number"  
+        id={name}
         data-testid="input-field" 
         value={val}
         onChange={e => {
@@ -19,6 +21,15 @@ const NumberInput = () => {
 const validateNumber = num => {
   const res = parseInt(num);
   return (isNaN(res)) ? 0 : res;
+};
+
+NumberInput.propTypes = {
+  name: PropTypes.string.isRequired,
+  initialVal: PropTypes.number
+};
+
+NumberInput.defaultProps = {
+  initialVal: 0 
 };
 
 export default NumberInput;
