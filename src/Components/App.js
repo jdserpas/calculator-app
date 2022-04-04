@@ -9,6 +9,28 @@ class App extends Component {
     this.state = {
       currentTotal: 0,
     };
+    this.click = this.click.bind(this);
+  }
+
+  click(){
+    const num1 = parseInt(document.getElementById("input-1").value);
+    const num2 = parseInt(document.getElementById("input-2").value);
+    const operation = document.getElementById("default-selector").value;
+    
+    let result;
+
+    switch(operation) {
+    case "plus":
+      result = num1 + num2;
+      break;
+    case "minus":
+      result = num1 - num2;
+      break;
+    default:
+      result = 0;
+    }
+
+    this.setState({currentTotal: result});
   }
 
   render() {
@@ -19,9 +41,10 @@ class App extends Component {
         <h1>Hello, World!</h1>
         <NumberInput name="input-1"/>
         <NumberInput name="input-2"/>
-        <Selector />
+        <Selector name="default-selector"/>
         <button 
-          data-testid="calculate">
+          data-testid="calculate"
+          onClick={this.click}>
             Calculate
         </button>
         <Total total={currentTotal}/>
