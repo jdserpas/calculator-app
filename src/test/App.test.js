@@ -9,13 +9,18 @@ describe("App Component", ()=> {
     const {getByText} = render(<App />);
     expect(getByText("Hello, World!")).toBeInTheDocument();
   });
-
-  /**********Text boxes**************/
   it("renders 2 textboxes", ()=> {
     const {getAllByTestId, getByTestId} = render(<App />);
     const Container = getByTestId("app-containter");
     const Child = getAllByTestId("input-field");
     
     expect(Container).toContainElement(Child[0]);
+  });
+  it("renders a total with a default value of 0", ()=> {
+    const{getByTestId} = render(<App />);
+    const containter = getByTestId("total");
+
+    expect(containter).toBeInTheDocument();
+    expect(containter).toHaveTextContent(0);
   });
 });
