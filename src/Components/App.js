@@ -2,7 +2,7 @@ import React, { Component} from "react";
 import NumberInput from "./NumberInput";
 import Selector from "./Selector";
 import Total from "./Total";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "../../public/bootstrap.min.css";
 
 class App extends Component {
   constructor(props) {
@@ -39,7 +39,9 @@ class App extends Component {
 
     return(
       <div className="App container" data-testid="app-containter">
-        <h1>Calculator</h1>
+        <div className="row justify-content-center">
+          <h1 className="col-3 text-center">Calculator</h1>
+        </div>
         <div className="row justify-content-center gy-5">
           <NumberInput className="col-3" name="input-1"/>
         </div>
@@ -47,15 +49,17 @@ class App extends Component {
           <NumberInput className="col-3" name="input-2"/>
         </div>
         <div className="row justify-content-center">
-          <Selector className="col-2" name="default-selector"/>
+          <Selector className="col-2 m-2" name="default-selector"/>
           <button 
             data-testid="calculate"
             onClick={this.click}
-            className="btn btn-primary col-2">
+            className="btn btn-primary col-2 m-2">
               Calculate
           </button>
         </div>
-        <Total total={currentTotal}/>
+        <div className="row justify-content-center">
+          <Total className="col-2" total={currentTotal}/>
+        </div>
       </div>
     );
   }

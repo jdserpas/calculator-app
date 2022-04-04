@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Total = ({total}) => {
+const Total = ({total, ...props}) => {
   return(
-    <>
-      <h2 data-testid="total" >{total}</h2>
-    </>
+    <div {...props}>
+      <h2 data-testid="total" className="text-center">{total}</h2>
+    </div>
   );
 };
 
