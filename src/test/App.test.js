@@ -34,7 +34,6 @@ describe("App Component", ()=> {
     const inputs = getAllByTestId("input-field");
     const btn = getByTestId("calculate");
     const total = getByTestId("total");
-    console.log(inputs);
 
     inputs.forEach( i => {
       fireEvent.change(i, {
