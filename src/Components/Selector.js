@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function Selector({name, options}) {
+function Selector({name, options, ...props}) {
   const ops = options.map((op) => 
     <option key={op.key} value={op.value}>
       {op.value}
@@ -9,11 +9,13 @@ function Selector({name, options}) {
   );
   
   return(
-    <>
-      <select data-testid="drop-down" id={name}>
+    <div {...props} >
+      <select data-testid="drop-down" 
+        id={name} 
+        className="form-select">
         {ops}
       </select>
-    </>
+    </div>
   );
 }
 
