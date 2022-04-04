@@ -27,7 +27,7 @@ describe("NumberInput Component", () => {
 
     expect(component).toHaveValue(3);
   });
-  it("only accepts number inputes", ()=> {
+  it("only accepts number inputs", ()=> {
     const component = screen.getByTestId("input-field");
 
     fireEvent.change(component, {
@@ -39,7 +39,7 @@ describe("NumberInput Component", () => {
     expect(component).toHaveValue(0);
   });
 
-  it("accepts an input value", ()=> {
+  it("accepts an input value from props", ()=> {
     cleanup(); //remove previously created DOM
     const init = 7;
     //create new components with new initial value

@@ -5,9 +5,9 @@ import App from "../Components/App";
 
 describe("App Component", ()=> {
   
-  it("renders a Hello World header", ()=> {
+  it("renders a descriptive header", ()=> {
     const {getByText} = render(<App />);
-    expect(getByText("Hello, World!")).toBeInTheDocument();
+    expect(getByText("Calculator")).toBeInTheDocument();
   });
   it("renders 2 textboxes", ()=> {
     const {getAllByTestId, getByTestId} = render(<App />);
@@ -15,6 +15,7 @@ describe("App Component", ()=> {
     const Child = getAllByTestId("input-field");
     
     expect(Container).toContainElement(Child[0]);
+    expect(Container).toContainElement(Child[1]);
   });
   it("renders a total with a default value of 0", ()=> {
     const{getByTestId} = render(<App />);

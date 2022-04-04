@@ -38,7 +38,7 @@ class App extends Component {
 
     return(
       <div className="App" data-testid="app-containter">
-        <h1>Hello, World!</h1>
+        <h1>Calculator</h1>
         <NumberInput name="input-1"/>
         <NumberInput name="input-2"/>
         <Selector name="default-selector"/>
