@@ -19,6 +19,10 @@ class App extends Component {
         <NumberInput />
         <NumberInput />
         <Selector />
+        <button 
+          data-testid="calculate">
+            Calculate
+        </button>
         <Total total="0"/>
       </div>
     );
