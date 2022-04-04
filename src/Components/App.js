@@ -3,6 +3,7 @@ import NumberInput from "./NumberInput";
 import Selector from "./Selector";
 import Total from "./Total";
 import "../../public/bootstrap.min.css";
+import "../../public/main.css";
 
 class App extends Component {
   constructor(props) {
@@ -38,27 +39,29 @@ class App extends Component {
     const {currentTotal} = this.state;
 
     return(
-      <div className="App container" data-testid="app-containter">
-        <div className="row justify-content-center">
-          <h1 className="col-3 text-center">Calculator</h1>
-        </div>
-        <div className="row justify-content-center gy-5">
-          <NumberInput className="col-3" name="input-1"/>
-        </div>
-        <div className="row justify-content-center gy-5">
-          <NumberInput className="col-3" name="input-2"/>
-        </div>
-        <div className="row justify-content-center">
-          <Selector className="col-2 m-2" name="default-selector"/>
-          <button 
-            data-testid="calculate"
-            onClick={this.click}
-            className="btn btn-primary col-2 m-2">
-              Calculate
-          </button>
-        </div>
-        <div className="row justify-content-center">
-          <Total className="col-2" total={currentTotal}/>
+      <div className="App">
+        <div className="container-sm chalkboard" data-testid="app-containter">
+          <div className="row justify-content-center">
+            <h1 className="col-3 text-center">Calculator</h1>
+          </div>
+          <div className="row justify-content-center gy-5">
+            <NumberInput className="col-3" name="input-1"/>
+          </div>
+          <div className="row justify-content-center gy-5">
+            <NumberInput className="col-3" name="input-2"/>
+          </div>
+          <div className="row justify-content-center">
+            <Selector className="col-2 m-2" name="default-selector"/>
+            <button 
+              data-testid="calculate"
+              onClick={this.click}
+              className="btn btn-primary col-2 m-2">
+                Calculate
+            </button>
+          </div>
+          <div className="row justify-content-center">
+            <Total className="col-2" total={currentTotal}/>
+          </div>
         </div>
       </div>
     );
