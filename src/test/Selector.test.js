@@ -5,7 +5,7 @@ import Selector from "../Components/Selector";
 
 describe("Selector component", ()=> {
   beforeEach(()=> {
-    render(<Selector />);
+    render(<Selector name="test-selector"/>);
   });
 
   it("renders a drop down", ()=> {

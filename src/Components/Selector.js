@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function Selector({options}) {
+function Selector({name, options}) {
   const ops = options.map((op) => 
     <option key={op.key} value={op.value}>
       {op.value}
@@ -10,7 +10,7 @@ function Selector({options}) {
   
   return(
     <>
-      <select data-testid="drop-down">
+      <select data-testid="drop-down" id={name}>
         {ops}
       </select>
     </>
@@ -18,6 +18,7 @@ function Selector({options}) {
 }
 
 Selector.propTypes = {
+  name: PropTypes.string.isRequired,
   options: PropTypes.array
 };
 
