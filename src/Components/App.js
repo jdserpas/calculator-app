@@ -7,12 +7,13 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      inputOne: 0,
-      inputTwo: 0,
+      currentTotal: 0,
     };
   }
 
   render() {
+    const {currentTotal} = this.state;
+
     return(
       <div className="App" data-testid="app-containter">
         <h1>Hello, World!</h1>
@@ -23,7 +24,7 @@ class App extends Component {
           data-testid="calculate">
             Calculate
         </button>
-        <Total total="0"/>
+        <Total total={currentTotal}/>
       </div>
     );
   }
