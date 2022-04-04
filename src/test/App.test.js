@@ -1,5 +1,5 @@
 import React from "react";
-import { render} from "@testing-library/react";
+import { render, fireEvent} from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import App from "../Components/App";
 
@@ -28,5 +28,23 @@ describe("App Component", ()=> {
     const btn = getByTestId("calculate");
 
     expect(btn).toBeInTheDocument();
+  });
+  it("updates state on button click", ()=> {
+    const{getByTestId, getAllByTestId} = render(<App />);
+    const inputs = getAllByTestId("input-field");
+    const btn = getByTestId("calculate");
+    const total = getByTestId("total");
+    console.log(inputs);
+
+    inputs.forEach( i => {
+      fireEvent.change(i, {
+        target: {
+          value: 4
+        }
+      });
+    });
+    fireEvent.click(btn);
+
+    expect(total).toHaveTextContent(8);
   });
 });
