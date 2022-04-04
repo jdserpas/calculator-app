@@ -1,20 +1,23 @@
 import React from "react";
-import { render, fireEvent } from "@testing-library/react";
+import { render, fireEvent, screen, cleanup } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import NumberInput from "../Components/NumberInput";
 
 describe("NumberInput Component", () => {
+  beforeEach(()=> {
+    render(<NumberInput name="test-input"/>);
+  });
+
   it("renders an input field", ()=> {
-    const {getByTestId} = render(<NumberInput />);
-    expect(getByTestId("input-field")).toBeInTheDocument();
+    const component = screen.getByTestId("input-field");
+    expect(component).toBeInTheDocument();
   });
   it("has an initial value of 0", ()=> {
-    const {getByTestId} = render(<NumberInput />);
-    expect(getByTestId("input-field")).toHaveValue(0);
+    const component = screen.getByTestId("input-field");
+    expect(component).toHaveValue(0);
   });
   it("changes value after onChange event fires", ()=> {
-    const {getByTestId} = render(<NumberInput />);
-    const component = getByTestId("input-field");
+    const component = screen.getByTestId("input-field");
 
     fireEvent.change(component, {
       target: {
@@ -25,8 +28,7 @@ describe("NumberInput Component", () => {
     expect(component).toHaveValue(3);
   });
   it("only accepts number inputes", ()=> {
-    const {getByTestId} = render(<NumberInput />);
-    const component = getByTestId("input-field");
+    const component = screen.getByTestId("input-field");
 
     fireEvent.change(component, {
       target: {
@@ -35,5 +37,15 @@ describe("NumberInput Component", () => {
     });
 
     expect(component).toHaveValue(0);
+  });
+
+  it("accepts an input value", ()=> {
+    cleanup(); //remove previously created DOM
+    const init = 7;
+    //create new components with new initial value
+    render(<NumberInput name="input-w-init" initialVal={init} />);
+    const component = screen.getByTestId("input-field");
+
+    expect(component).toHaveValue(init);
   });
 });
