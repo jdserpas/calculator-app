@@ -23,4 +23,10 @@ describe("App Component", ()=> {
     expect(containter).toBeInTheDocument();
     expect(containter).toHaveTextContent(0);
   });
+  it("renders a button", ()=> {
+    const{getByTestId} = render(<App />);
+    const btn = getByTestId("calculate");
+
+    expect(btn).toBeInTheDocument();
+  });
 });
