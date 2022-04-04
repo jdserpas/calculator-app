@@ -46,7 +46,7 @@ class App extends Component {
         <div className="row justify-content-center gy-5">
           <NumberInput className="col-3" name="input-2"/>
         </div>
-        <div className="row">
+        <div className="row justify-content-center">
           <Selector className="col-2" name="default-selector"/>
           <button 
             data-testid="calculate"
