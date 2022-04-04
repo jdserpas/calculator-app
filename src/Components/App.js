@@ -1,6 +1,7 @@
 import React, { Component} from "react";
 import NumberInput from "./NumberInput";
 import Selector from "./Selector";
+import Total from "./Total";
 
 class App extends Component {
   constructor(props) {
@@ -18,6 +19,7 @@ class App extends Component {
         <NumberInput />
         <NumberInput />
         <Selector />
+        <Total total="0"/>
       </div>
     );
   }
