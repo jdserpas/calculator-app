@@ -40,8 +40,12 @@ class App extends Component {
     return(
       <div className="App container" data-testid="app-containter">
         <h1>Calculator</h1>
-        <NumberInput name="input-1"/>
-        <NumberInput name="input-2"/>
+        <div className="row justify-content-center gy-5">
+          <NumberInput className="col-3" name="input-1"/>
+        </div>
+        <div className="row justify-content-center gy-5">
+          <NumberInput className="col-3" name="input-2"/>
+        </div>
         <div className="row">
           <Selector className="col-2" name="default-selector"/>
           <button 

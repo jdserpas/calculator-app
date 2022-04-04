@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-const NumberInput = ({name, initialVal}) => {
+const NumberInput = ({name, initialVal, ...props}) => {
   const [val, setState] = useState(initialVal);
 
   return(
-    <div>
+    <div {...props}>
       <input type="number"  
         id={name}
         data-testid="input-field" 
@@ -13,6 +13,7 @@ const NumberInput = ({name, initialVal}) => {
         onChange={e => {
           setState(validateNumber(e.target.value));
         }}
+        className="form-control p-2 m-2"
       />
     </div>
   );
