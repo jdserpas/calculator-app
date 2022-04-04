@@ -17,8 +17,8 @@ class App extends Component {
     return(
       <div className="App" data-testid="app-containter">
         <h1>Hello, World!</h1>
-        <NumberInput />
-        <NumberInput />
+        <NumberInput name="input-1"/>
+        <NumberInput name="input-2"/>
         <Selector />
         <button 
           data-testid="calculate">
